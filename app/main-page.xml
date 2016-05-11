@@ -1,0 +1,45 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:maps="nativescript-google-maps-sdk"  navigatingTo="navigatingTo">
+  <TabView id="tabViewContainer">
+      <TabView.items>
+          <TabViewItem title="Tab 1">
+              <TabViewItem.view>
+                  <GridLayout >
+                      <maps:mapView latitude="{{ latitude }}" longitude="{{ longitude }}" 
+                        zoom="{{ zoom }}" bearing="{{ bearing }}" 
+                        tilt="{{ tilt }}" padding="{{ padding }}" mapReady="OnMapReady"  
+                      markerSelect="onMarkerSelect" 
+                      cameraChanged="onCameraChanged" />
+                  </GridLayout>
+              </TabViewItem.view>
+          </TabViewItem>
+          <TabViewItem title="Tab 2">
+              <TabViewItem.view>
+              <StackLayout>
+                  <Label text="This is Label in Tab 2" />
+              </StackLayout>
+              </TabViewItem.view>
+          </TabViewItem>
+          <TabViewItem title="Tab 3">
+              <TabViewItem.view>
+                 <StackLayout>
+                  <Label text="This is Label in Tab 3" />
+              </StackLayout>
+              </TabViewItem.view>
+          </TabViewItem>
+          <TabViewItem title="Tab 4">
+              <TabViewItem.view>
+                  <ListView items="{{ source }}"  >
+                      <ListView.itemTemplate>
+                          <StackLayout>
+                              <Label text="{{ title }}" textWrap="true" />
+                              <Label text="{{ description }}" textWrap="true" />
+                              <Image src="{{image}}" stretch ="none" />
+                          </StackLayout>
+                      </ListView.itemTemplate>
+                  </ListView>
+              </TabViewItem.view>
+          </TabViewItem>
+      </TabView.items>
+  </TabView>
+  
+</Page>
